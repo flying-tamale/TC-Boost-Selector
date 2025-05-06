@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram Ad Auto Launcher - Control Panel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: linear-gradient(to bottom right, #fff8f0, #e7d3c9);
+      color: #2a2a2a;
+      padding: 40px;
+    }
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: 36px;
+      margin-bottom: 0.5em;
+    }
+    .panel {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.07);
+      padding: 30px;
+      max-width: 600px;
+      margin-top: 40px;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      border: none;
+      background: #000;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background: #333;
+    }
+    .footer {
+      margin-top: 80px;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <h1>Auto Ad Launcher Config</h1>
+  <div class="panel">
+    <label for="dateRange">Allow posts between these dates:</label>
+    <input type="date" id="startDate"> to <input type="date" id="endDate">
+
+    <label for="adset">Ad Set ID</label>
+    <input type="text" id="adset" placeholder="e.g. 120217694287270686">
+
+    <label for="placements">Placement</label>
+    <select id="placements">
+      <option value="feed">Feed</option>
+      <option value="story">Story</option>
+      <option value="reels">Reels</option>
+    </select>
+
+    <label for="keywords">Trigger if caption contains:</label>
+    <textarea id="keywords" placeholder="Comma-separated keywords...">sweepstakes, win, giveaway</textarea>
+
+    <button onclick="alert('Mock saved!')">Save Settings</button>
+  </div>
+
+  <div class="footer">Built by Brandon Paillere • Visual Config Only</div>
+</body>
+</html>

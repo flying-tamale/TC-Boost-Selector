@@ -1,72 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Instagram Ad Auto Launcher - Control Panel</title>
+  <meta charset="UTF-8">
+  <title>Automated Ad Settings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background: linear-gradient(to bottom right, #fff8f0, #e7d3c9);
-      color: #2a2a2a;
       padding: 40px;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #fdf6e3, #f5efe0);
+      color: #222;
     }
+
     h1 {
-      font-family: 'Georgia', serif;
-      font-size: 36px;
-      margin-bottom: 0.5em;
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      margin-bottom: 10px;
     }
+
+    p {
+      font-size: 16px;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
     .panel {
       background: white;
       border-radius: 20px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.07);
       padding: 30px;
       max-width: 600px;
-      margin-top: 40px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
     }
+
     label {
-      display: block;
+      font-weight: 500;
       margin-top: 20px;
-      font-weight: 600;
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
     }
-    input, select, textarea {
+
+    input[type="date"],
+    select,
+    textarea {
       width: 100%;
       padding: 12px;
-      margin-top: 6px;
+      margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 10px;
       font-size: 14px;
     }
+
+    textarea {
+      height: 80px;
+    }
+
     button {
-      margin-top: 30px;
-      padding: 12px 24px;
-      border: none;
-      background: #000;
+      margin-top: 10px;
+      background-color: #111;
       color: white;
-      font-weight: bold;
+      padding: 12px 24px;
+      font-size: 14px;
+      border: none;
       border-radius: 10px;
       cursor: pointer;
-      font-size: 14px;
+      transition: background 0.2s ease;
     }
+
     button:hover {
-      background: #333;
+      background-color: #333;
     }
-    .footer {
-      margin-top: 80px;
-      font-size: 12px;
-      opacity: 0.7;
+
+    footer {
+      margin-top: 60px;
+      font-size: 13px;
+      color: #777;
     }
   </style>
 </head>
 <body>
-  <h1>Auto Ad Launcher Config</h1>
+  <h1>Automated Ad Settings</h1>
+  <p>
+    Define the parameters for which Instagram posts should trigger ad creation. You can filter by dates, ad sets, placements, and keywords in the caption.
+  </p>
+
   <div class="panel">
     <label for="dateRange">Allow posts between these dates:</label>
     <input type="date" id="startDate"> to <input type="date" id="endDate">
 
-    <label for="adset">Ad Set ID</label>
-    <input type="text" id="adset" placeholder="e.g. 120217694287270686">
+    <label for="adset">Choose Ad Set</label>
+    <select id="adset">
+      <option value="120217694287270686">Tennis Fans – 120217694287270686</option>
+      <option value="118998872372736">General Awareness – 118998872372736</option>
+      <option value="112345678901234">Retargeting – 112345678901234</option>
+    </select>
 
     <label for="placements">Placement</label>
     <select id="placements">
@@ -78,9 +106,11 @@
     <label for="keywords">Trigger if caption contains:</label>
     <textarea id="keywords" placeholder="Comma-separated keywords...">sweepstakes, win, giveaway</textarea>
 
-    <button onclick="alert('Mock saved!')">Save Settings</button>
+    <button onclick="alert('Settings saved (mock)!')">Save Settings</button>
   </div>
 
-  <div class="footer">Built by Brandon Paillere • Visual Config Only</div>
+  <footer>
+    Made with ✨ by Brandon — Direct Agents | Verbal Mockup UI
+  </footer>
 </body>
 </html>
